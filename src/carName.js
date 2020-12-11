@@ -1,3 +1,5 @@
+import makeCarObject from './carMake.js'
+
 const carNameInput = document.getElementById("car-names-input");
 const carNameButton = document.getElementById("car-names-submit");
 
@@ -32,15 +34,23 @@ function handleSubmitName(event){
 
 carNameButton.addEventListener("click", handleSubmitName)
 
+
 function validationName(){
-    nameTokens.forEach(function(car){
-        if(car.length > 5){
-            alert("Car name should be less than 5. Input again.");
+    nameTokens.forEach(function(cName){
+        if(cName.length > 5){
             acceptableName = false;
         }
         else{
-            console.log(car);
             acceptableName = true;
+            
         }
     })
+    if(acceptableName){
+        makeCarObject();
+    }
+    else{
+        alert(`Car name should be less than 5. Input again.`);
+    }
 }
+
+export {nameTokens, acceptableName};
