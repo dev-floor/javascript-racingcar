@@ -9,8 +9,7 @@ let inputNames = "";
 // contains names that is sliced by ",".
 let nameTokens = [];
 
-// judge if after "validationName()", it is acceptable
-// car names or not.
+// judge if after "validationName()", it is acceptable car names or not.
 let acceptableName = false;
 
 // when pressed Enter key.
@@ -34,15 +33,14 @@ function handleSubmitName(event){
 
 carNameButton.addEventListener("click", handleSubmitName)
 
-
+// go through if input car names are acceptable. check its validation
 function validationName(){
     nameTokens.forEach(function(cName){
         if(cName.length > 5){
             acceptableName = false;
         }
         else{
-            acceptableName = true;
-            
+            acceptableName = true;       
         }
     })
     if(acceptableName){

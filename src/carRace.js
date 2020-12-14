@@ -1,13 +1,12 @@
 import {tryInput, makeRandomNumer} from './tryCount.js';
 import {carArray} from './carMake.js';
+import {printResult, printRacing} from './printResult.js';
 
 const carGameResult = document.querySelector(".car-game-result");
 
 let max;
 
 export default function carRaceStart(){
-    console.log(makeRandomNumer());
-    console.log(tryInput);
     for(let i = 0 ; i < tryInput ; i++){
         carMove();
         printRacing();
@@ -25,21 +24,7 @@ function carMove(){
             car.path += "-";
             car.pathCount++;
         }
-        else{
-            
-        }
     })
-}
-
-// prints racing status table.
-function printRacing(){
-    carArray.forEach(function(car){
-        let divTmp = document.createElement("div");
-        divTmp.innerText = `${car.name} : ${car.path}`;
-        carGameResult.appendChild(divTmp);
-    })
-    let br = document.createElement("br");
-    carGameResult.appendChild(br);
 }
 
 // calculate maximum pathCount.
@@ -53,17 +38,4 @@ function maximumCount(){
     return tmp;
 }
 
-// prints which car won the competition.
-function printResult(){
-    let stringTmp = "";
-    carArray.forEach(function(car){
-        if(max == car.pathCount){
-            stringTmp += `${car.name}, `;
-        }
-    })
-    stringTmp = stringTmp.substring(0, stringTmp.length-2);
-    let divTmp = document.createElement("div");
-    divTmp.innerText = `최종 우승자 : ${stringTmp}`;
-    carGameResult.appendChild(divTmp);
-}
-
+export {max};
