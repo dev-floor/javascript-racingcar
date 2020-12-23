@@ -2,14 +2,14 @@ import { inputCarName } from "./inputCarName.js";
 import { startGame } from "./startGame.js";
 
 function inputCntNum() {
-  const num = document.getElementById("racing-count-submit");
-  num.addEventListener('click', handleSubmit);
+  const carsNameInput = document.getElementById("car-names-input");
+  const cntNum = document.getElementById("racing-count-input");
+  const countingBtn = document.getElementById("racing-count-submit");
+  countingBtn.addEventListener('click', handleSubmit);
 
   function handleSubmit() {
-    // 입력 범위에 대한 조건이 있다면 넣어주고
-    
     // game Start
-    startGame();
+    startGame(carsNameInput.value.split(','), cntNum.value);
   }
 }
 
