@@ -1,6 +1,7 @@
 import Car from "./car.js";
 
 let carArray = [];
+let winner = [];
 
 function startGame(cars, num) {
   // 자동차 객체 생성
@@ -12,6 +13,8 @@ function startGame(cars, num) {
   }
   // 우승자 선정
   selectWinner();
+  // 우승자 출력
+  printWinner();
 }
 
 function makeCarObj(cars) {
@@ -48,7 +51,15 @@ function raceStatePrint() {
 }
 
 function selectWinner() {
-  
+  // 자동차 객체를 value 값에 따라 정렬
+  carArray.sort(function (a,b) {
+    return a.cnt > b.cnt ? -1 : a.cnt < b.cnt ? 1:0
+  })
+  for(let i in carArray) {
+    if(carArray[0].cnt !== carArray[i].cnt) break;
+    winner.push(carArray[i].name);
+  }
+  console.log(winner);
 }
 
 

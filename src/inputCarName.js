@@ -21,7 +21,6 @@ function inputCarName() {
 
     // 길이 체크
     for(let i in inputSplit) {
-      console.log(inputSplit[i].length)
       if(inputSplit[i].length > 5) {
         alert('자동차 이름의 길이를 5자 이하로 해주세요.');
         validationFlagValue = false;
