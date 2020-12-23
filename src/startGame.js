@@ -5,11 +5,13 @@ let carArray = [];
 function startGame(cars, num) {
   // 자동차 객체 생성
   makeCarObj(cars);
-  // 횟수만큼 각 name들에 대해 경주 실행 시킨다. 
+  // 횟수만큼 레이싱 시키고 결과 저장하기
   for(let i=0;i<num;i++) {
     racing();
+    raceStatePrint();
   }
-  // 경주 결과 출력
+  // 우승자 선정
+  selectWinner();
 }
 
 function makeCarObj(cars) {
@@ -28,5 +30,26 @@ function racing() {
     }
   }
 }
+
+function raceStatePrint() {
+  for(let i in carArray) {
+    let path = '';
+    if(carArray[i].cnt) {
+      for(let j=0; j<carArray[i].cnt; j++) {
+        path = path + '-';
+      }
+    } 
+    let div = document.createElement('div');
+    document.body.append(div);
+    div.textContent = carArray[i].name + " : " + path;
+  }
+  let br = document.createElement('br');
+  document.body.append(br);
+}
+
+function selectWinner() {
+  
+}
+
 
 export {startGame};
