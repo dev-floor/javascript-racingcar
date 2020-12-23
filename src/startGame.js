@@ -59,8 +59,17 @@ function selectWinner() {
     if(carArray[0].cnt !== carArray[i].cnt) break;
     winner.push(carArray[i].name);
   }
-  console.log(winner);
 }
 
+function printWinner() {
+  let result = '';
+  for(let i in winner) {
+    if(i == winner.length-1) result += winner[i];
+    else result += winner[i] + ', ';
+  }
+  let div = document.createElement('div');
+  document.body.append(div);
+  div.textContent = "최종 우승자: " + result;
+}
 
 export {startGame};
