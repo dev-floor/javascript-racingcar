@@ -1,4 +1,5 @@
-import {hiddenInitView} from "./initialization.js";
+import {hiddenRacintCountContainerView} from "./view/countingContainer.js"
+import {hiddenResultContainerView} from "./view/resultContainer.js"
 import { inputCarName } from "./inputCarName.js";
 import { inputCntNum } from "./inputCntNum.js";
 
@@ -7,23 +8,19 @@ export default class RacingCarGame {
    this.init();
  }
  
- // 초기 세팅 - view 관리 (보여질 것과 가릴 것)
  init() {
-   // 횟수와 결과 view는 처음에는 안보이게 처리.
-  hiddenInitView();
-  
-  // 이후 처리될 이벤트들을 사용할 수 있게 바인딩 해주기. -> 이렇게 하게 될 경우 첫 화면에서 모든 js파일 불러오게 되니까 비효율 적이라고 생각.
-  // 이렇게 안해주고 동적으로 불러와서 할 수 있는지???? 
+  hiddenRacintCountContainerView();
+  hiddenResultContainerView();
+
   this.input();
  }
  
  input() {
   inputCarName();
   inputCntNum();
+  // 위의 값들에서 Return 값을 받아오고
+  // this.gameStart(param1, param2)로 하는 게 맞나?
  }
-
- 
-
 }
 
 new RacingCarGame();
