@@ -12,12 +12,15 @@ let nameTokens = [];
 // judge if after "validationName()", it is acceptable car names or not.
 let acceptableName = false;
 
+const ENTER_KEY = 13;
+const COMMA = ",";
+
 // when pressed Enter key.
-function handleEnterName(event){
-    if(event.keyCode == 13){
+function handleEnterName(event) {
+    if(event.keyCode == ENTER_KEY) {
         event.preventDefault();
         inputNames = carNameInput.value;
-        nameTokens = inputNames.split(",");
+        nameTokens = inputNames.split(COMMA);
         validationName();
     }
 }
@@ -25,30 +28,18 @@ function handleEnterName(event){
 carNameInput.addEventListener("keydown", handleEnterName);
 
 // when clicked "확인" button.
-function handleSubmitName(event){
+function handleSubmitName() {
     inputNames = carNameInput.value;
-    nameTokens = inputNames.split(",");
+    nameTokens = inputNames.split(COMMA);
     validationName();
 }
 
 carNameButton.addEventListener("click", handleSubmitName)
 
 // go through if input car names are acceptable. check its validation
-function validationName(){
-    nameTokens.forEach(function(cName){
-        if(cName.length > 5){
-            acceptableName = false;
-        }
-        else{
-            acceptableName = true;       
-        }
-    })
-    if(acceptableName){
-        makeCarObject();
-    }
-    else{
-        alert(`Car name should be less than 5. Input again.`);
-    }
+function validationName() {
+    nameTokens.forEach(carName => carName.length > 5 ? (acceptableName = false) : (acceptableName = true))
+    acceptableName ? makeCarObject() : alert(`Car name should be less than 5. Input again.`);
 }
 
 export {nameTokens, acceptableName};

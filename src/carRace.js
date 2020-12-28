@@ -1,13 +1,14 @@
 import {tryInput, makeRandomNumer} from './tryCount.js';
-import {carArray} from './carMake.js';
+import {cars} from './carMake.js';
 import {printResult, printRacing} from './printResult.js';
 
 const carGameResult = document.querySelector(".car-game-result");
+const RANDOM_STD = 4;
 
 let max;
 
-export default function carRaceStart(){
-    for(let i = 0 ; i < tryInput ; i++){
+export default function carRaceStart() {
+    for(let i = 0 ; i < tryInput ; i++) {
         carMove();
         printRacing();
     }
@@ -16,10 +17,10 @@ export default function carRaceStart(){
 }
 
 // adding string "-"
-function carMove(){
-    carArray.forEach(function(car){
+function carMove() {
+    cars.forEach(function(car) {
         let randonNumTmp = makeRandomNumer();
-        if(randonNumTmp >= 4){
+        if(randonNumTmp >= RANDOM_STD) {
             // move forward.
             car.path += "-";
             car.pathCount++;
@@ -28,14 +29,14 @@ function carMove(){
 }
 
 // calculate maximum pathCount.
-function maximumCount(){
-    let tmp = -1;
-    carArray.forEach(function(car){
-        if(tmp < car.pathCount){
-            tmp = car.pathCount;
+function maximumCount() {
+    let min = -1;
+    cars.forEach(function(car) {
+        if(min < car.pathCount) {
+            min = car.pathCount;
         }
     })
-    return tmp;
+    return min;
 }
 
 export {max};

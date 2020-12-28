@@ -5,7 +5,7 @@ const racingCountInput = document.getElementById("racing-count-input");
 
 let tryInput;
 
-function handleRacingCount(event){
+function handleRacingCount(event) {
     event.preventDefault();
     tryInput = racingCountInput.value;
     
@@ -15,9 +15,6 @@ function handleRacingCount(event){
 
 racingCountSubmit.addEventListener("click", handleRacingCount);
 
-function makeRandomNumer(){
-    let randomNum = Math.floor(Math.random() * 9);
-    return randomNum;
-}
+let makeRandomNumer = () => Math.floor(Math.random() * 9);
 
 export {tryInput, makeRandomNumer};
