@@ -30,13 +30,13 @@ function carMove() {
 
 // calculate maximum pathCount.
 function maximumCount() {
-    let min = -1;
+    let compare = -1;
     cars.forEach(function(car) {
-        if(min < car.pathCount) {
-            min = car.pathCount;
+        if(compare < car.pathCount) {
+            compare = car.pathCount;
         }
     })
-    return min;
+    return compare;
 }
 
 export {max};

@@ -15,6 +15,6 @@ function handleRacingCount(event) {
 
 racingCountSubmit.addEventListener("click", handleRacingCount);
 
-let makeRandomNumer = () => Math.floor(Math.random() * 9);
+const makeRandomNumer = () => Math.floor(Math.random() * 9);
 
 export {tryInput, makeRandomNumer};
