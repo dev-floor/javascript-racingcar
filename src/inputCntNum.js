@@ -1,17 +1,18 @@
-import { inputCarName } from "./inputCarName.js";
 import { startGame } from "./startGame.js";
 
-const carsNameInput = document.getElementById("car-names-input");
-const cntNum = document.getElementById("racing-count-input");
-
-function inputCntNum() {  
-  const countingBtn = document.getElementById("racing-count-submit");
-  countingBtn.addEventListener('click', handleSubmit);
-}
+const inputCarNames = document.getElementById("car-names-input");
+const racingCountNumber = document.getElementById("racing-count-input");
+const submitBtn = document.getElementById("racing-count-submit");
 
 function handleSubmit() {
-  // game Start
-  startGame(carsNameInput.value.split(','), cntNum.value);
+  let cars = inputCarNames.value.split(',');
+  let count = racingCountNumber.value;
+
+  startGame(cars, count);
+}
+
+function inputCntNum() {  
+  submitBtn.addEventListener('click', handleSubmit);
 }
 
 export {inputCntNum};
