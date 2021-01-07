@@ -1,5 +1,5 @@
 
-import {showRacintCountContainerView} from "./view/countingContainer.js"
+import {showRacingCountContainerView} from "./view/countingContainer.js"
 import {showResultContainerView} from "./view/resultContainer.js"
 
 const carsNameInput = document.getElementById("car-names-input");
@@ -27,10 +27,9 @@ function validationCarName() {
       break;
     }
   }
-  
   // name 정상 입력시 하단 view 보여주기
   if(validationFlagValue) {
-    showRacintCountContainerView();
+    showRacingCountContainerView();
     showResultContainerView();
   }
    

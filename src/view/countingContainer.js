@@ -1,12 +1,12 @@
 const racingCountContainer = document.getElementById("counting-container");
 
 
-function hiddenRacintCountContainerView() {
+function hiddenRacingCountContainerView() {
   racingCountContainer.style.display = 'none';
 }
 
-function showRacintCountContainerView() {
+function showRacingCountContainerView() {
   racingCountContainer.style.display = 'block';
 }
 
-export {hiddenRacintCountContainerView, showRacintCountContainerView};
+export {hiddenRacingCountContainerView, showRacingCountContainerView};

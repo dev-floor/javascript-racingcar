@@ -1,4 +1,4 @@
-import {hiddenRacintCountContainerView} from "./view/countingContainer.js"
+import {hiddenRacingCountContainerView} from "./view/countingContainer.js"
 import {hiddenResultContainerView} from "./view/resultContainer.js"
 import { inputCarName } from "./inputCarName.js";
 import { inputCntNum } from "./inputCntNum.js";
@@ -9,7 +9,7 @@ export default class RacingCarGame {
  }
  
  init() {
-  hiddenRacintCountContainerView();
+  hiddenRacingCountContainerView();
   hiddenResultContainerView();
 
   this.input();
