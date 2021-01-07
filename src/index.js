@@ -18,8 +18,6 @@ export default class RacingCarGame {
  input() {
   inputCarName();
   inputCntNum();
-  // 위의 값들에서 Return 값을 받아오고
-  // this.gameStart(param1, param2)로 하는 게 맞나?
  }
 }
 
