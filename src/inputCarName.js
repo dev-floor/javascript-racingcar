@@ -15,10 +15,10 @@ function inputCarName() {
 }
 
 function validationCarName() {
-  let cars = inputCarNames.value.split(',');
+  let carNameArray = inputCarNames.value.split(',');
   let nameValidation = true;
 
-  cars.forEach((carName) => carName.length > MAX_NAME_LENGTH_LIMIT ? nameValidation = false : nameValidation = true)
+  carNameArray.forEach((carName) => carName.length > MAX_NAME_LENGTH_LIMIT ? nameValidation = false : nameValidation = true)
 
   nameValidation ? printNextView() : alert('자동차 이름의 길이를 5자 이하로 해주세요.');
   
