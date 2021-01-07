@@ -2,37 +2,31 @@
 import {showRacingCountContainerView} from "./view/countingContainer.js"
 import {showResultContainerView} from "./view/resultContainer.js"
 
-const carsNameInput = document.getElementById("car-names-input");
-const carNameSubmitBtn = document.getElementById("car-names-submit");
-
-function inputCarName() {
-  carNameSubmitBtn.addEventListener('click', handleSubmit);
-}
+const inputCarNames = document.getElementById("car-names-input");
+const submitBtn = document.getElementById("car-names-submit");
+const MAX_NAME_LENGTH_LIMIT = 5;
 
 function handleSubmit() {
   validationCarName();
 };
 
-function validationCarName() {
-  // input tag 값에 대한 유효성 체크 
-  let inputStr = carsNameInput.value;
-  let inputSplit = inputStr.split(',');
-  let validationFlagValue = true;
+function inputCarName() {
+  submitBtn.addEventListener('click', handleSubmit);
+}
 
-  // 길이 체크
-  for(let i in inputSplit) {
-    if(inputSplit[i].length > 5) {
-      alert('자동차 이름의 길이를 5자 이하로 해주세요.');
-      validationFlagValue = false;
-      break;
-    }
-  }
-  // name 정상 입력시 하단 view 보여주기
-  if(validationFlagValue) {
-    showRacingCountContainerView();
-    showResultContainerView();
-  }
-   
+function validationCarName() {
+  let cars = inputCarNames.value.split(',');
+  let nameValidation = true;
+
+  cars.forEach((carName) => carName.length > MAX_NAME_LENGTH_LIMIT ? nameValidation = false : nameValidation = true)
+
+  nameValidation ? printNextView() : alert('자동차 이름의 길이를 5자 이하로 해주세요.');
+  
+}
+
+function printNextView() {
+  showRacingCountContainerView();
+  showResultContainerView();
 }
 
 export {inputCarName};
