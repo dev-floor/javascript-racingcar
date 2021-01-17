@@ -1,5 +1,5 @@
 import { constants } from '../constantValues/constants.js';
-import carRaceStart from './carRace.js';
+import { carRaceStart } from './carRace.js';
 
 const racingCountInput = document.getElementById("racing-count-input");
 

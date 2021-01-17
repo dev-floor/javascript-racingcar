@@ -1,10 +1,10 @@
- import {nameTokens, acceptableName} from './carName.js';
+import {nameTokens, acceptableName} from './carName.js';
 
 const inputTryCountPage = document.querySelector(".car-game-try-input");
 
 let cars = [];
 
-class Car {
+export default class Car {
     constructor(name) {
         this.name = name;
         this.path = "";
@@ -12,7 +12,7 @@ class Car {
     }
 }
 
-export default function makeCarObject() {
+function makeCarObject() {
     nameTokens.forEach(function(name) {
         const car = new Car(name);
         cars.push(car);

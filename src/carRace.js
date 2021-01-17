@@ -7,7 +7,7 @@ const carGameResult = document.querySelector(".car-game-result");
 
 let max;
 
-export default function carRaceStart() {
+function carRaceStart() {
     for(let i = 0 ; i < tryInput ; i++) {
         carMove();
         printRacing();
@@ -39,4 +39,4 @@ function maximumCount() {
     return compare;
 }
 
-export {max};
+export {max, carRaceStart};

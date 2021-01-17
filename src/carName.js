@@ -1,4 +1,4 @@
-import makeCarObject from './carMake.js';
+import {makeCarObject} from './carMake.js';
 import {message} from "../constantValues/message.js"; 
 import { constants } from '../constantValues/constants.js';
 
