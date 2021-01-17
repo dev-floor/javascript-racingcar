@@ -1,4 +1,5 @@
-import makeCarObject from './carMake.js'
+import makeCarObject from './carMake.js';
+import {message} from "../constantValues/message.js"; 
 
 const carNameInput = document.getElementById("car-names-input");
 const carNameButton = document.getElementById("car-names-submit");
@@ -38,8 +39,8 @@ carNameButton.addEventListener("click", handleSubmitName)
 
 // go through if input car names are acceptable. check its validation
 function validationName() {
-    nameTokens.forEach(carName => carName.length > 5 ? (acceptableName = false) : (acceptableName = true))
-    acceptableName ? makeCarObject() : alert(`Car name should be less than 5. Input again.`);
+    acceptableName = nameTokens.some(carName => carName.length > 5 )
+    acceptableName ? alert(message.CAR_NAME_LENGTH_INAPPROPRIATE) : makeCarObject();
 }
 
 export {nameTokens, acceptableName};

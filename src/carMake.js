@@ -1,5 +1,7 @@
  import {nameTokens, acceptableName} from './carName.js';
 
+const inputTryCountPage = document.querySelector(".car-game-try-input");
+
 let cars = [];
 
 class Car {
@@ -15,6 +17,8 @@ export default function makeCarObject() {
         const car = new Car(name);
         cars.push(car);
     })
+    inputTryCountPage.classList.remove("hidden");
+    inputTryCountPage.classList.add("show");
 }
 
 export {makeCarObject, cars};

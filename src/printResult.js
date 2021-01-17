@@ -17,6 +17,9 @@ function printResult() {
     let newDiv = document.createElement("div");
     newDiv.innerText = `최종 우승자 : ${stringResult}`;
     carGameResult.appendChild(newDiv);
+    
+    carGameResult.classList.remove("hidden");
+    carGameResult.classList.add("show");
 }
 
 // prints racing status table.
