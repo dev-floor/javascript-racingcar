@@ -1,9 +1,9 @@
 import {tryInput, makeRandomNumer} from './tryCount.js';
 import {cars} from './carMake.js';
 import {printResult, printRacing} from './printResult.js';
+import { constants } from '../constantValues/constants.js';
 
 const carGameResult = document.querySelector(".car-game-result");
-const RANDOM_STD = 4;
 
 let max;
 
@@ -20,7 +20,7 @@ export default function carRaceStart() {
 function carMove() {
     cars.forEach(function(car) {
         let randonNumTmp = makeRandomNumer();
-        if(randonNumTmp >= RANDOM_STD) {
+        if(randonNumTmp >= constants.RANDOM_NUMBER_STANDARD ) {
             // move forward.
             car.path += "-";
             car.pathCount++;

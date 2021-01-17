@@ -1,9 +1,8 @@
 import {cars} from './carMake.js';
 import {max} from './carRace.js';
+import {constants} from "../constantValues/constants.js";
 
 const carGameResult = document.querySelector(".car-game-result");
-
-const COMMA_BLANK = 2;
 
 // prints which car won the competition.
 function printResult() {
@@ -13,7 +12,7 @@ function printResult() {
             stringResult += `${car.name}, `;
         }
     })
-    stringResult = stringResult.substring(0, stringResult.length - COMMA_BLANK);
+    stringResult = stringResult.substring(0, stringResult.length - constants.COMMA_BLANK);
     let newDiv = document.createElement("div");
     newDiv.innerText = `최종 우승자 : ${stringResult}`;
     carGameResult.appendChild(newDiv);

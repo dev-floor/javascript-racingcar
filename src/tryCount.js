@@ -1,6 +1,6 @@
+import { constants } from '../constantValues/constants.js';
 import carRaceStart from './carRace.js';
 
-const racingCountSubmit = document.getElementById("racing-count-submit");
 const racingCountInput = document.getElementById("racing-count-input");
 
 let tryInput;
@@ -13,8 +13,6 @@ function handleRacingCount(event) {
     carRaceStart();
 }
 
-racingCountSubmit.addEventListener("click", handleRacingCount);
+const makeRandomNumer = () => Math.floor(Math.random() * constants.RANDOM_NUMBER_LIMIT);
 
-const makeRandomNumer = () => Math.floor(Math.random() * 9);
-
-export {tryInput, makeRandomNumer};
+export {tryInput, makeRandomNumer, handleRacingCount};

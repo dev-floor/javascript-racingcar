@@ -1,8 +1,8 @@
 import makeCarObject from './carMake.js';
 import {message} from "../constantValues/message.js"; 
+import { constants } from '../constantValues/constants.js';
 
 const carNameInput = document.getElementById("car-names-input");
-const carNameButton = document.getElementById("car-names-submit");
 
 // contains what user input. (Total)
 let inputNames = "";
@@ -13,34 +13,27 @@ let nameTokens = [];
 // judge if after "validationName()", it is acceptable car names or not.
 let acceptableName = false;
 
-const ENTER_KEY = 13;
-const COMMA = ",";
-
 // when pressed Enter key.
 function handleEnterName(event) {
-    if(event.keyCode == ENTER_KEY) {
-        event.preventDefault();
+    if(event.keyCode == constants.ENTER_KEY) {
+        //event.preventDefault();
         inputNames = carNameInput.value;
-        nameTokens = inputNames.split(COMMA);
+        nameTokens = inputNames.split(constants.COMMA);
         validationName();
     }
 }
 
-carNameInput.addEventListener("keydown", handleEnterName);
-
 // when clicked "확인" button.
 function handleSubmitName() {
     inputNames = carNameInput.value;
-    nameTokens = inputNames.split(COMMA);
+    nameTokens = inputNames.split(constants.COMMA);
     validationName();
 }
 
-carNameButton.addEventListener("click", handleSubmitName)
-
 // go through if input car names are acceptable. check its validation
 function validationName() {
-    acceptableName = nameTokens.some(carName => carName.length > 5 )
+    acceptableName = nameTokens.some(carName => carName.length > constants.CAR_MINIMUM_LENGTH )
     acceptableName ? alert(message.CAR_NAME_LENGTH_INAPPROPRIATE) : makeCarObject();
 }
 
-export {nameTokens, acceptableName};
+export {nameTokens, acceptableName, handleEnterName, handleSubmitName};
