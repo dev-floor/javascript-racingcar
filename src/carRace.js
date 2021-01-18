@@ -3,8 +3,6 @@ import {cars} from './carMake.js';
 import {printResult, printRacing} from './printResult.js';
 import { constants } from '../constantValues/constants.js';
 
-const carGameResult = document.querySelector(".car-game-result");
-
 let max;
 
 function carRaceStart() {
@@ -12,7 +10,7 @@ function carRaceStart() {
         carMove();
         printRacing();
     }
-    max = maximumCount();
+    max = findLongestPath();
     printResult();
 }
 
@@ -29,7 +27,7 @@ function carMove() {
 }
 
 // calculate maximum pathCount.
-function maximumCount() {
+function findLongestPath() {
     let compare = -1;
     cars.forEach(function(car) {
         if(compare < car.pathCount) {

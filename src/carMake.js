@@ -2,7 +2,7 @@ import {nameTokens, acceptableName} from './carName.js';
 
 const inputTryCountPage = document.querySelector(".car-game-try-input");
 
-let cars = [];
+const cars = [];
 
 export default class Car {
     constructor(name) {
