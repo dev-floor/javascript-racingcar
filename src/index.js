@@ -6,13 +6,12 @@ import { inputCntNum } from "./inputCntNum.js";
 export default class RacingCarGame {
  constructor() {
    this.init();
+   this.input();
  }
  
  init() {
   hiddenRacingCountContainerView();
   hiddenResultContainerView();
-
-  this.input();
  }
  
  input() {

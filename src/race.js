@@ -1,10 +1,9 @@
 import Car from "./car.js";
+import {COMMA, RACE_CONDITION_NUMBER, COMMA_BLANK} from './constant/constants.js'
 
 let cars = [];
 let winnerArray = [];
-const RACE_CONDITION_NUMBER = 4;
-const COMMA = ', ';
-const COMMA_BLANK = 2;
+
 function raceStart(carNameArray, count) {
   makeCarObj(carNameArray);
 

@@ -1,10 +1,9 @@
-
 import {showRacingCountContainerView} from "./view/countingContainer.js"
 import {showResultContainerView} from "./view/resultContainer.js"
+import {MAX_NAME_LENGTH_LIMIT, COMMA} from "./constant/constants.js"
 
 const inputCarNames = document.getElementById("car-names-input");
 const submitBtn = document.getElementById("car-names-submit");
-const MAX_NAME_LENGTH_LIMIT = 5;
 
 function handleSubmit() {
   validationCarName();
@@ -15,7 +14,7 @@ function inputCarName() {
 }
 
 function validationCarName() {
-  let carNameArray = inputCarNames.value.split(',');
+  let carNameArray = inputCarNames.value.split(COMMA);
   let nameValidation = true;
 
   carNameArray.forEach((carName) => carName.length > MAX_NAME_LENGTH_LIMIT ? nameValidation = false : nameValidation = true)
